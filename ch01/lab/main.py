@@ -30,7 +30,7 @@ choice3 = 7
 choice4 = 678
 choice5 = 45.2
 
-list1 = choice1, choice2, choice3, choice4, choice5
+list1 = [choice1, choice2, choice3, choice4, choice5]
 
 randomChoice = random.choice(list1)
 
