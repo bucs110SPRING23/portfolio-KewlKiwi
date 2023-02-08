@@ -8,12 +8,13 @@ max = int(360/shapeAngle)
 
 turtle1 = turtle.Turtle()
 window = turtle.Screen()
+window.bgcolor("lightblue")
 turtle1.shape("turtle")
-turtle1.color("blue")
+turtle1.color("green")
 turtle1.speed(1)
 turtle1.down()
 
-for i in range(max):
+for _ in range(max):
     turtle1.forward(length)
     turtle1.left(shapeAngle)
 
