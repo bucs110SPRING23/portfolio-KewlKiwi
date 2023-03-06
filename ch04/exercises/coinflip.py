@@ -14,11 +14,11 @@ leonardo.goto(0,0)
 height = turtle.window_height() / 2
 width = turtle.window_width() / 2
 
-while 1 == 1:
+while True:
     if leonardo.xcor() > width or leonardo.xcor() < -(width) or leonardo.ycor() > height or leonardo.ycor() < -(height):
         turtle.Screen().bye()
         break
-    leonardo.forward(150)
+    leonardo.forward(50)
     coinflip = random.randrange(0,2)
     if coinflip == 0:
        coinflip = "Heads"
