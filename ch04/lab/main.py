@@ -89,11 +89,11 @@ if not quit:
     size = pygame.display.set_mode()
     screen_size = size.get_size()
 
-    screen.fill("cyan")
+    screen.fill("brown")
     screen_size = screen.get_size()
 
     pygame.draw.circle(screen, "black", [screen_size[0]/2, (screen_size[1]/2)], screen_size[1]/2)
-    pygame.draw.circle(screen, "pink", [screen_size[0]/2, (screen_size[1]/2)], screen_size[1]/2 - 5)
+    pygame.draw.circle(screen, "grey", [screen_size[0]/2, (screen_size[1]/2)], screen_size[1]/2 - 5)
 
     dimensions1 = [(0), (screen_size[1] / 2), (screen_size[0]), 5]
     dimensions2 = [(screen_size[0]/2), (0), 5, screen_size[1]]
