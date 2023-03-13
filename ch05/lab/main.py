@@ -39,8 +39,6 @@ def graph_coordinates(threenplus1_iters_dict):
      msg = font.render(msg, True, "white")
      display.blit(msg, [100, 500])
 
-     #coordinates = threenplus1_iters_dict[_]
-
      pygame.draw.lines(new_display, "white", (100, 900), ((threenplus1_iters_dict[_]), (threenplus1_iters_dict[_ + 1])))
 
      pygame.display.flip()
@@ -52,8 +50,5 @@ def main():
   upper_limit = int(input("Please enter an upper limit: "))
   threenplus1_iters_dict = (threenp1range(upper_limit))
   graph_coordinates(threenplus1_iters_dict)
-  #print(threenplus1_iters_dict[5])
-  #print(threenplus1_iters_dict)
-  #print(threenplus1_iters_dict[1][1])
 
 main()
