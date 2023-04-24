@@ -42,4 +42,6 @@ def main():
     fptr1 = open("message.txt", "r")
     message = str(fptr1.read())
     print(pi_cipher(message))
+    fptr2 = open("encrypted.txt", "w")
+    fptr2.write(pi_cipher(message))
 main()
