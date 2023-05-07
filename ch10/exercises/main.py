@@ -36,6 +36,8 @@ def main():
             print("Error")
         elif len(possibles) == 2 and (selection != "0" and selection != "1"):
             print("Error")
+        elif len(possibles) == 3 and (selection != "0" and selection != "1" and selection != "2"):
+            print("Error")
         elif possibles[int(selection)] == r["correct_answer"]:
             print("correct answer")
         else:
