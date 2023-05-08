@@ -3,11 +3,6 @@ import drink
 import requests
 
 def main():
-    """
-    Runs the program, gets results from get functions in drink.py and food.py and prints them to the screen. Allows the user to select whether they want to view meal ingredients, drink ingredients, or the recipes for both.
-    args: None
-    return: None
-    """
     meal = food.Food()
     results1 = meal.get()
     beverage = drink.Drink()
