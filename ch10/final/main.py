@@ -1,6 +1,5 @@
 import food
 import drink
-import requests
 
 def main():
     meal = food.Food()
