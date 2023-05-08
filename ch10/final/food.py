@@ -17,8 +17,37 @@ class Food:
         return: (list) list with keys and values from the url including the name, recipe, and ingredients
         """
         response = requests.get(self.url)
-        data = response.json()
-        if data.get('meals'):
-            return data['meals']
+        self.data = response.json()
+        if self.data.get('meals'):
+            self.var = self.data['meals']
+            return self.data['meals']
         else:
             return None
+
+    def ingredients(self, data1):
+        """
+        Prints ingredients in the meal
+        args: (dictionary) dictionary containing the keys and values for the different ingredients
+        return: None
+        """
+        data = data1
+        print("")
+        print("Meal Ingredients:")
+        for _ in range(20):
+         key = "strIngredient" + str(_ + 1)
+         ingredients = data[key]
+         if ingredients == None or ingredients == "":
+             break
+         print(ingredients)
+
+    def recipe(self, data1):
+        """
+        Prints the recipe for the meal
+        args: (dictionary) dictionary containing the string for the meal recipe
+        return: None
+        """
+        data = data1
+        print("")
+        print("Meal Recipe:")
+        instructions1 = data['strInstructions']
+        print(instructions1)

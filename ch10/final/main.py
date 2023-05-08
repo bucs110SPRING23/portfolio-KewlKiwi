@@ -30,36 +30,14 @@ def main():
      response = input()
 
      if response == "a":
-          print("")
-          print("Meal Ingredients:")
-          for _ in range(20):
-             key = "strIngredient" + str(_ + 1)
-             ingredients1 = data1[key]
-             if ingredients1 == None or ingredients1 == "":
-                break
-             print(ingredients1)
+          meal.ingredients(data1)
      elif response == "b":
-         print("")
-         print("Drink Ingredients:")
-         for _ in range(15):
-             key2 = "strIngredient" + str(_ + 1)
-             ingredients2 = data2[key2]
-             if ingredients2 == None:
-                 break
-             print(ingredients2)
+          beverage.ingredients(data2)
      elif response == "c":
-        print("")
-        print("Meal Recipe:")
-        instructions1 = data1['strInstructions']
-        print(instructions1)
+          meal.recipe(data1)
      elif response == "d":
-        print("")
-        print("Drink Recipe:")
-        instructions2 = data2['strInstructions']
-        print(instructions2)
+          beverage.recipe(data2)
      elif response == "q":
         view = False
-
-
 
 main()
