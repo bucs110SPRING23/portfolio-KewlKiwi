@@ -1,26 +1,75 @@
-import turtle #1. import modules
+import pygame
 import random
+import math
 
-#Part A
-window = turtle.Screen() # 2.  Create a screen
-window.bgcolor('lightblue')
+guess = input("Who will win? ")
 
-michelangelo = turtle.Turtle() # 3.  Create two turtles
-leonardo = turtle.Turtle()
-michelangelo.color('orange')
-leonardo.color('blue')
-michelangelo.shape('turtle')
-leonardo.shape('turtle')
+pygame.init()
+size = pygame.display.set_mode()
+screen_size = size.get_size()
 
-michelangelo.up() # 4. Pick up the pen so we don’t get lines
-leonardo.up()
-michelangelo.goto(-100,20)
-leonardo.goto(-100,-20)
+screen = pygame.display.set_mode([screen_size[1], screen_size[1]])
 
-## 5. Your PART A code goes here
+screen.fill("cyan")
+screen_size = screen.get_size()
+
+pygame.draw.circle(screen, "black", [screen_size[0]/2, (screen_size[1]/2)], screen_size[1]/2)
+pygame.draw.circle(screen, "pink", [screen_size[0]/2, (screen_size[1]/2)], screen_size[1]/2 - 5)
+
+dimensions1 = [(0), (screen_size[1] / 2), (screen_size[0]), 5]
+dimensions2 = [(screen_size[0]/2), (0), 5, screen_size[1]]
+
+pygame.draw.rect(screen, "black", dimensions1)
+pygame.draw.rect(screen, "black", dimensions2)
+
+pygame.display.flip()
+pygame.time.wait(2000)
+
+p1score = 0
+p2score = 0
+
+for _ in range(10):
+
+    p1x = random.randrange(0, screen_size[0])
+    p1y = random.randrange(0, screen_size[1])
+
+    p2x = random.randrange(0, screen_size[0])
+    p2y = random.randrange(0, screen_size[1])
+
+    distance_from_center1 = math.hypot(p1x-(screen_size[0]/2), p1y-(screen_size[1]/2))
+    is_in_circle1 = distance_from_center1 <= (screen_size[1] / 2)
+
+    distance_from_center2 = math.hypot(p2x-(screen_size[0]/2), p2y-(screen_size[1]/2))
+    is_in_circle2 = distance_from_center2 <= (screen_size[1] / 2)
+
+    if is_in_circle1:
+        color1 = "lightgreen"
+        p1score += 1
+    else:
+        color1 = "pink"
+
+    if is_in_circle2:
+        color2 = "green"
+        p2score += 1
+    else:
+        color2 = "red"
+
+    pygame.draw.circle(screen, color1, [p1x, p1y], 5)
+    pygame.draw.circle(screen, color2, [p2x, p2y], 5)
+    pygame.display.flip()
+    pygame.time.wait(1000)
 
 
-# PART B - complete part B here
+print("Score: " + str(p1score) + "-" + str(p2score))
 
+if p1score > p2score:
+    print("Player 1 Wins!")
+    winner = "1"
+else:
+    print("Player 2 Wins!")
+    winner = "2"
 
-window.exitonclick()
+if guess == winner:
+    print("You guessed correctly!")
+else:
+    print("Your guess was incorrect.")
